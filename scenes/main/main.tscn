@@ -155,5 +155,6 @@ centered = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x1lw3")
 animation = &"idle"
-frame_progress = 0.682821
+autoplay = "idle"
+frame_progress = 0.429636
 centered = false
