@@ -2,9 +2,9 @@ extends Node
 
 @export var total_minigames = 3
 
-var minigames = [preload("res://scenes/minigames/balancear.tscn"), \
+var minigames = [preload("res://scenes/minigames/lanza_tomates.tscn"), \
 				preload("res://scenes/minigames/simon_says.tscn"), \
-				preload("res://scenes/minigames/lanza_tomates.tscn")]
+				preload("res://scenes/minigames/balancear.tscn")]
 
 var current_minigames = []
 var min_id = 0
@@ -26,7 +26,7 @@ func next_minigame():
 		current_min_comp.GameFinished.connect(player_has_won)
 		min_id += 1
 	else:
-		print("GAME FINISHED")
+		print("GA")
 	
 func player_has_won(win : bool): #Just for test
 	print(current_min_comp.key)
