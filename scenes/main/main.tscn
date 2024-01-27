@@ -154,6 +154,6 @@ centered = false
 [node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x1lw3")
-animation = &"laugh"
-frame_progress = 0.66782
+animation = &"idle"
+frame_progress = 0.682821
 centered = false

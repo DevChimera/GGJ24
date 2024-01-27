@@ -8,10 +8,11 @@ signal GameFinished (win : bool)
 
 @export var id : String
 @export var key : String
-@export var time : float = 60
+@export var time : float = 30
 @export var win_score : int = 5
 @export var fails_score : int = 3
 @export var animation : AnimationPlayer
+@export var timebar : AnimatedSprite2D
 
 var current_score = 0
 var current_fails = 0
@@ -22,6 +23,11 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ScoreWin.connect(on_score_win)
 	GameEvents.ScoreFail.connect(on_score_fail)
+	set_timebar()
+	
+	
+func set_timebar():
+	timebar.speed_scale = 18.3 / time
 
 func on_score_win():
 	print(current_score)
@@ -34,12 +40,18 @@ func on_score_fail():
 	if current_fails >= fails_score:
 		on_game_finished(false)
 
-func on_timer_timeout():
-	on_game_finished(false)
-
 func on_game_finished(_victory: bool):
 	victory = _victory
 	animation.play("fade_out")
 	
 func on_fade_out_finished():
 	GameFinished.emit(victory)
+
+func start_minigame():
+	timer.start()
+	timebar.play("default")
+	
+func on_timer_timeout():
+	print("PERDISTE")
+	timebar.pause()
+	on_game_finished(false)

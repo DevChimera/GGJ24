@@ -4,10 +4,6 @@
 
 [node name="SimonSays" type="Node"]
 
-[node name="MiniGameComponent" parent="." node_paths=PackedStringArray("button") instance=ExtResource("1_feb52")]
-key = "simon"
-button = NodePath("../Panel/Button")
-
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,3 +25,5 @@ offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "SIMON SAYS"
+
+[node name="MiniGameComponent" parent="." instance=ExtResource("1_feb52")]
