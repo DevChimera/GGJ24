@@ -28,10 +28,10 @@ func shoot():
 		add_child(new)
 		animation_player.play("shoot")
 		shoot_delay.start()
-		
-		
 
 func on_shoot_delay_timeout():
 	animation_player.play("angle")
 	canShoot = true
 	
+func on_start_game():
+	animation_player.play("angle")
