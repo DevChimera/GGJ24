@@ -10,5 +10,24 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_xprtf")
 centered = false
 
-[node name="HitPointComponent" parent="." instance=ExtResource("2_r4ke5")]
-position = Vector2(193, 29)
+[node name="HitPoints" type="Node2D" parent="."]
+
+[node name="HitPointComponent" parent="HitPoints" instance=ExtResource("2_r4ke5")]
+position = Vector2(52, 44)
+scale = Vector2(2, 2)
+
+[node name="HitPointComponent2" parent="HitPoints" instance=ExtResource("2_r4ke5")]
+position = Vector2(214, 41)
+scale = Vector2(2, 2)
+
+[node name="HitPointComponent3" parent="HitPoints" instance=ExtResource("2_r4ke5")]
+position = Vector2(316, 65)
+scale = Vector2(2, 2)
+
+[node name="HitPointComponent4" parent="HitPoints" instance=ExtResource("2_r4ke5")]
+position = Vector2(323, 138)
+scale = Vector2(2, 2)
+
+[node name="HitPointComponent5" parent="HitPoints" instance=ExtResource("2_r4ke5")]
+position = Vector2(111, 102)
+scale = Vector2(2, 2)

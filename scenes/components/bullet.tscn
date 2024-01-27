@@ -1,16 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2mvg8yo7cd8i"]
+[gd_scene load_steps=14 format=3 uid="uid://b2mvg8yo7cd8i"]
 
-[ext_resource type="Texture2D" uid="uid://b8j671vhkv1qx" path="res://assets/minigamesLevels/tomato/face_a.png" id="1_7wftt"]
+[ext_resource type="Script" path="res://scenes/components/bullet.gd" id="1_c3cn7"]
+[ext_resource type="Texture2D" uid="uid://cjej6jkp8wf8i" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_1.png" id="1_k1tqp"]
+[ext_resource type="Texture2D" uid="uid://by1oi4i078qyl" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_2.png" id="2_5pcp6"]
+[ext_resource type="Texture2D" uid="uid://bgjyajxywip2b" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_3.png" id="3_lya4d"]
+[ext_resource type="Texture2D" uid="uid://bol6xfabw1mlk" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_6.png" id="5_8nmcl"]
+[ext_resource type="Texture2D" uid="uid://d1v2urirminhp" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_5.png" id="5_ns7im"]
+[ext_resource type="Texture2D" uid="uid://bkh0pry04oybp" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_7.png" id="6_th1od"]
 
 [sub_resource type="Curve2D" id="Curve2D_jbypm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -400, 0, 0, 0, 0, 0, -400, 0, 0, 0, 0, 0, -400)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -400)
 }
-point_count = 4
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_0vyqm"]
 resource_name = "shoot"
-length = 0.4
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,36 +24,88 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1.68179, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(0.435275, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_k1tqp"), ExtResource("2_5pcp6"), ExtResource("3_lya4d")]
+}
+
+[sub_resource type="Animation" id="Animation_6wmpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_k1tqp")]
+}
+
+[sub_resource type="Animation" id="Animation_26w0n"]
+resource_name = "splash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_ns7im"), ExtResource("5_8nmcl"), ExtResource("6_th1od")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtdqm"]
 _data = {
-"shoot": SubResource("Animation_0vyqm")
+"RESET": SubResource("Animation_6wmpu"),
+"shoot": SubResource("Animation_0vyqm"),
+"splash": SubResource("Animation_26w0n")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgxj2"]
+radius = 15.0
 
 [node name="Bullet" type="Path2D"]
 curve = SubResource("Curve2D_jbypm")
+script = ExtResource("1_c3cn7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vtdqm")
 }
 autoplay = "shoot"
-speed_scale = 0.5
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, -200)
 rotation = -1.5708
+progress = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
-texture = ExtResource("1_7wftt")
+rotation = 1.5708
+texture = ExtResource("1_k1tqp")
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
 shape = SubResource("CircleShape2D_qgxj2")
+
+[connection signal="area_entered" from="PathFollow2D/Area2D" to="." method="_on_area_2d_area_entered"]

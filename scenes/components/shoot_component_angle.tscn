@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfeaob1ulb3sb"]
+[gd_scene load_steps=10 format=3 uid="uid://bfeaob1ulb3sb"]
 
 [ext_resource type="Script" path="res://scenes/components/shoot_component_angle.gd" id="1_1yb3v"]
-[ext_resource type="Texture2D" uid="uid://coea6elch4arg" path="res://icon.svg" id="2_kdisd"]
+[ext_resource type="Texture2D" uid="uid://dmfmqktx38ljp" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_4.png" id="2_hkefq"]
+[ext_resource type="Texture2D" uid="uid://y1a38h8hq31s" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_1.png" id="3_7glx5"]
+[ext_resource type="Texture2D" uid="uid://5fyoycx41rfk" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_2.png" id="4_vg5ok"]
+[ext_resource type="Texture2D" uid="uid://d2yykawavdcqy" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_3.png" id="5_t3ycq"]
 
 [sub_resource type="Animation" id="Animation_q7h75"]
 resource_name = "angle"
@@ -16,7 +19,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(0.7, 0.7, 0.7),
 "update": 0,
-"values": [1.5708, -1.5708, 1.5708]
+"values": [1.22173, -1.22173, 1.22173]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_7glx5")]
 }
 
 [sub_resource type="Animation" id="Animation_ayyje"]
@@ -33,11 +48,41 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hkefq")]
+}
+
+[sub_resource type="Animation" id="Animation_4uq3x"]
+resource_name = "shoot"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.14, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_7glx5"), ExtResource("4_vg5ok"), ExtResource("5_t3ycq"), ExtResource("2_hkefq")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57ban"]
 _data = {
 "RESET": SubResource("Animation_ayyje"),
-"angle": SubResource("Animation_q7h75")
+"angle": SubResource("Animation_q7h75"),
+"shoot": SubResource("Animation_4uq3x")
 }
 
 [node name="ShootComponentAngle" type="Node2D"]
@@ -48,12 +93,10 @@ libraries = {
 "": SubResource("AnimationLibrary_57ban")
 }
 autoplay = "angle"
+speed_scale = 0.6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(205, 213)
-scale = Vector2(0.1, 1)
-texture = ExtResource("2_kdisd")
-offset = Vector2(0, -64)
+texture = ExtResource("2_hkefq")
 
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 0.4

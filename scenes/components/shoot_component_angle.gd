@@ -6,6 +6,8 @@ extends Node2D
 @onready var shoot_delay = $ShootDelay
 
 var bullet = preload("res://scenes/components/bullet.tscn")
+var canShoot : bool = true
+var rotation_state
 
 func _ready():
 	animation_player.speed_scale = velocity
@@ -16,13 +18,20 @@ func _input(event):
 		shoot()
 
 func shoot():
-	animation_player.pause()
-	shoot_delay.start()
-	var new = bullet.instantiate()
-	new.global_position = sprite_2d.global_position
-	new.global_rotation = sprite_2d.global_rotation
-	add_child(new)
+	if canShoot:
+		animation_player.pause()
+		rotation_state = animation_player.current_animation_position
+		canShoot = false
+		
+		var new = bullet.instantiate()
+		new.global_rotation = sprite_2d.global_rotation
+		add_child(new)
+		animation_player.play("shoot")
+		shoot_delay.start()
+		
+		
 
 func on_shoot_delay_timeout():
 	animation_player.play("angle")
+	canShoot = true
 	

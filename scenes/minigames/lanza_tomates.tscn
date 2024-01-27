@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://55yglby40hxe"]
 
-[ext_resource type="Script" path="res://scenes/minigames/lanza_tomates.gd" id="1_14mft"]
 [ext_resource type="PackedScene" uid="uid://cq7fd3xpt00do" path="res://scenes/components/mini_game_component.tscn" id="1_lpbuu"]
 [ext_resource type="PackedScene" uid="uid://bfeaob1ulb3sb" path="res://scenes/components/shoot_component_angle.tscn" id="3_lmtay"]
+[ext_resource type="PackedScene" uid="uid://crmtb606u3kot" path="res://scenes/components/fail_collision.tscn" id="4_1l8v8"]
 [ext_resource type="PackedScene" uid="uid://ft31bbnbv2wl" path="res://scenes/components/tomato_table.tscn" id="4_htq8y"]
 
 [node name="LanzaTomates" type="Node"]
-script = ExtResource("1_14mft")
 
 [node name="MiniGameComponent" parent="." instance=ExtResource("1_lpbuu")]
 key = "tomates"
@@ -15,4 +14,19 @@ key = "tomates"
 position = Vector2(1, -1)
 
 [node name="ShootComponentAngle" parent="." instance=ExtResource("3_lmtay")]
-velocity = 0.5
+position = Vector2(198, 193)
+velocity = 0.8
+
+[node name="FailCollision" parent="." instance=ExtResource("4_1l8v8")]
+position = Vector2(-1, 113)
+scale = Vector2(1, 11.565)
+
+[node name="FailCollision2" parent="." instance=ExtResource("4_1l8v8")]
+position = Vector2(199, -3)
+rotation = 1.58013
+scale = Vector2(1, 20.735)
+
+[node name="FailCollision3" parent="." instance=ExtResource("4_1l8v8")]
+position = Vector2(384, 100)
+rotation = 3.11566
+scale = Vector2(1, 20.735)
