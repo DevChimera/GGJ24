@@ -14,6 +14,21 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_6wmpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_k1tqp")]
+}
+
 [sub_resource type="Animation" id="Animation_0vyqm"]
 resource_name = "shoot"
 length = 0.8
@@ -40,21 +55,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("1_k1tqp"), ExtResource("2_5pcp6"), ExtResource("3_lya4d")]
-}
-
-[sub_resource type="Animation" id="Animation_6wmpu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow2D/Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_k1tqp")]
 }
 
 [sub_resource type="Animation" id="Animation_26w0n"]
@@ -88,10 +88,10 @@ curve = SubResource("Curve2D_jbypm")
 script = ExtResource("1_c3cn7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "shoot"
 libraries = {
 "": SubResource("AnimationLibrary_vtdqm")
 }
-autoplay = "shoot"
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(0, -200)
