@@ -80,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"angry",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,7 +91,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,7 +138,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"laugh",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Main" type="Node"]
@@ -154,6 +154,6 @@ centered = false
 [node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x1lw3")
-animation = &"angry"
-frame_progress = 0.255136
+animation = &"laugh"
+frame_progress = 0.66782
 centered = false
