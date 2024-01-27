@@ -1,6 +1,159 @@
-[gd_scene load_steps=2 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=34 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
+[ext_resource type="Texture2D" uid="uid://ckri4yoacgfrp" path="res://assets/king/throneRoom.png" id="2_pev2q"]
+[ext_resource type="Texture2D" uid="uid://caq10bxesg0vp" path="res://assets/king/kingANGRY/angry_1.png" id="3_dvo2i"]
+[ext_resource type="Texture2D" uid="uid://c0afxtgg8aucg" path="res://assets/king/kingANGRY/angry_2.png" id="4_o3st3"]
+[ext_resource type="Texture2D" uid="uid://da3dsejj6ql21" path="res://assets/king/kingANGRY/angry_3.png" id="5_yovnk"]
+[ext_resource type="Texture2D" uid="uid://wrnw4i0dswqg" path="res://assets/king/kingANGRY/angry_4.png" id="6_5xan2"]
+[ext_resource type="Texture2D" uid="uid://basvmymcexdrb" path="res://assets/king/kingANGRY/angry_5.png" id="7_4tw4i"]
+[ext_resource type="Texture2D" uid="uid://2hlaav35wgu3" path="res://assets/king/kingANGRY/angry_6.png" id="8_xwl3b"]
+[ext_resource type="Texture2D" uid="uid://cpt2lw1va4ljj" path="res://assets/king/kingANGRY/angry_7.png" id="9_xsgef"]
+[ext_resource type="Texture2D" uid="uid://bxfpual32yq4p" path="res://assets/king/kingANGRY/angry_8.png" id="10_fw36h"]
+[ext_resource type="Texture2D" uid="uid://cjx0xbr1v3jsd" path="res://assets/king/kingANGRY/angry_9.png" id="11_al250"]
+[ext_resource type="Texture2D" uid="uid://cuxc2pgg280wf" path="res://assets/king/kingANGRY/angry_10.png" id="12_25ua4"]
+[ext_resource type="Texture2D" uid="uid://djumush0iixr1" path="res://assets/king/kingANGRY/angry_11.png" id="13_mnf1o"]
+[ext_resource type="Texture2D" uid="uid://bukjnqr8rlakm" path="res://assets/king/kingANGRY/angry_12.png" id="14_xvok4"]
+[ext_resource type="Texture2D" uid="uid://fje8fjkrfab1" path="res://assets/king/kingANGRY/angry_13.png" id="15_5pfvp"]
+[ext_resource type="Texture2D" uid="uid://bj7k60q46iiti" path="res://assets/king/kingANGRY/angry_14.png" id="16_5eniw"]
+[ext_resource type="Texture2D" uid="uid://d23l27sgpx742" path="res://assets/king/kingIDLE/idle_1.png" id="17_85ewb"]
+[ext_resource type="Texture2D" uid="uid://ca780j8vrykon" path="res://assets/king/kingIDLE/idle_2.png" id="18_esl2t"]
+[ext_resource type="Texture2D" uid="uid://ls1uklte5fw5" path="res://assets/king/kingLAUGH/laugh_1.png" id="19_pprc3"]
+[ext_resource type="Texture2D" uid="uid://dj3hpdqeje84f" path="res://assets/king/kingLAUGH/laugh_2.png" id="20_ftqk3"]
+[ext_resource type="Texture2D" uid="uid://drrkn11q7jt7t" path="res://assets/king/kingLAUGH/laugh_3.png" id="21_3s516"]
+[ext_resource type="Texture2D" uid="uid://bmmbxrhyd3jgn" path="res://assets/king/kingLAUGH/laugh_4.png" id="22_l745q"]
+[ext_resource type="Texture2D" uid="uid://bvtoefrkvuyfe" path="res://assets/king/kingLAUGH/laugh_5.png" id="23_ynqye"]
+[ext_resource type="Texture2D" uid="uid://d2cb752cakgbc" path="res://assets/king/kingLAUGH/laugh_6.png" id="24_icncs"]
+[ext_resource type="Texture2D" uid="uid://ddhivtfa0covh" path="res://assets/king/kingLAUGH/laugh_7.png" id="25_x2clq"]
+[ext_resource type="Texture2D" uid="uid://dttqj7pa8i2ka" path="res://assets/king/kingLAUGH/laugh_8.png" id="26_h500m"]
+[ext_resource type="Texture2D" uid="uid://cjoogco6lp6ka" path="res://assets/king/kingLAUGH/laugh_9.png" id="27_c4bxm"]
+[ext_resource type="Texture2D" uid="uid://qnh8mgv4s33f" path="res://assets/king/kingLAUGH/laugh_10.png" id="28_4hvwq"]
+[ext_resource type="Texture2D" uid="uid://bi82svaekmvm3" path="res://assets/king/kingLAUGH/laugh_11.png" id="29_ut818"]
+[ext_resource type="Texture2D" uid="uid://bd57ywccittj3" path="res://assets/king/kingLAUGH/laugh_12.png" id="30_86phk"]
+[ext_resource type="Texture2D" uid="uid://biw7frgkyrrls" path="res://assets/king/kingLAUGH/laugh_13.png" id="31_2cf43"]
+[ext_resource type="Texture2D" uid="uid://b76vasx44o8me" path="res://assets/king/kingLAUGH/laugh_14.png" id="32_66igy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x1lw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dvo2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o3st3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yovnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5xan2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4tw4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xwl3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xsgef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fw36h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_al250")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_25ua4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mnf1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xvok4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5pfvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5eniw")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_85ewb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_esl2t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_pprc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ftqk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3s516")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l745q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ynqye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_icncs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x2clq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_h500m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_c4bxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4hvwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ut818")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_86phk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2cf43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_66igy")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_omxc1")
+
+[node name="Kingbackground" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Kingbackground"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_pev2q")
+centered = false
+
+[node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_x1lw3")
+animation = &"angry"
+frame_progress = 0.255136
+centered = false
