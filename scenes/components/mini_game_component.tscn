@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cq7fd3xpt00do"]
 
-[ext_resource type="Script" path="res://scenes/minigames/mini_game.gd" id="1_eigwv"]
+[ext_resource type="Script" path="res://scenes/components/mini_game_comoponent.gd" id="1_812jt"]
 
 [node name="MiniGameComponent" type="Node"]
-script = ExtResource("1_eigwv")
+script = ExtResource("1_812jt")
+
+[node name="Timer" type="Timer" parent="."]
