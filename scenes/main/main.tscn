@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=3 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
+[ext_resource type="PackedScene" uid="uid://55yglby40hxe" path="res://scenes/minigames/lanza_tomates.tscn" id="2_jo4rk"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_omxc1")
+
+[node name="LanzaTomates" parent="." instance=ExtResource("2_jo4rk")]

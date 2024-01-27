@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ft31bbnbv2wl"]
+
+[ext_resource type="Texture2D" uid="uid://uihxr4kv83t" path="res://assets/minigamesLevels/tomato/tomatoBG.png" id="1_xprtf"]
+[ext_resource type="PackedScene" uid="uid://dxjsr6kf721rf" path="res://scenes/components/hit_point_component.tscn" id="2_r4ke5"]
+
+[node name="TomatoTable" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_xprtf")
+centered = false
+
+[node name="HitPointComponent" parent="." instance=ExtResource("2_r4ke5")]
+position = Vector2(199, 137)

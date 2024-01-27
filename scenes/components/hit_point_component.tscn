@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxjsr6kf721rf"]
+
+[ext_resource type="Script" path="res://scenes/components/hit_point_component.gd" id="1_kiuyy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qcm4"]
+
+[node name="HitPointComponent" type="Node2D"]
+script = ExtResource("1_kiuyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0qcm4")

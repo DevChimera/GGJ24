@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br0aps8kphhtj"
-path="res://.godot/imported/icon_v2.svg-bb65604f267d42bf65872515bbaf5ec3.ctex"
+uid="uid://uihxr4kv83t"
+path="res://.godot/imported/tomatoBG.png-9d433f5f65bb7996ea3d1c06367b0907.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon_v2.svg"
-dest_files=["res://.godot/imported/icon_v2.svg-bb65604f267d42bf65872515bbaf5ec3.ctex"]
+source_file="res://assets/minigamesLevels/tomato/tomatoBG.png"
+dest_files=["res://.godot/imported/tomatoBG.png-9d433f5f65bb7996ea3d1c06367b0907.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
