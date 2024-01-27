@@ -40,8 +40,14 @@ _data = {
 "angle": SubResource("Animation_q7h75")
 }
 
-[node name="ShootComponentHorizontal" type="Node2D"]
+[node name="ShootComponentAngle" type="Node2D"]
 script = ExtResource("1_1yb3v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_57ban")
+}
+autoplay = "angle"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(205, 213)
@@ -49,8 +55,5 @@ scale = Vector2(0.1, 1)
 texture = ExtResource("2_kdisd")
 offset = Vector2(0, -64)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_57ban")
-}
-autoplay = "angle"
+[node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.4

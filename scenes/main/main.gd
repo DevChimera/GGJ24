@@ -10,6 +10,7 @@ var current_minigames = []
 var min_id = 0
 var current_min : Node
 var current_min_comp : MiniGameComponent
+
 func _ready():
 	select_minigames()
 

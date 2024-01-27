@@ -14,5 +14,5 @@ key = "tomates"
 [node name="TomatoTable" parent="." instance=ExtResource("4_htq8y")]
 position = Vector2(1, -1)
 
-[node name="ShootComponentHorizontal" parent="." instance=ExtResource("3_lmtay")]
-position = Vector2(-7, 1)
+[node name="ShootComponentAngle" parent="." instance=ExtResource("3_lmtay")]
+velocity = 0.5

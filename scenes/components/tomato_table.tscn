@@ -11,4 +11,4 @@ texture = ExtResource("1_xprtf")
 centered = false
 
 [node name="HitPointComponent" parent="." instance=ExtResource("2_r4ke5")]
-position = Vector2(199, 137)
+position = Vector2(193, 29)
