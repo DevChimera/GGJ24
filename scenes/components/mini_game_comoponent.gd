@@ -6,6 +6,7 @@ signal GameFinished (win : bool)
 
 @onready var timer = $Timer
 
+
 @export var id : String
 @export var key : String
 @export var time : float = 30
@@ -47,11 +48,15 @@ func on_game_finished(_victory: bool):
 func on_fade_out_finished():
 	GameFinished.emit(victory)
 
+func on_fade_out_started():
+	GameEvents.GameFinished.emit()
+	
+
 func start_minigame():
 	timer.start()
 	timebar.play("default")
+	GameEvents.GameStart.emit()
 	
 func on_timer_timeout():
-	print("PERDISTE")
 	timebar.pause()
 	on_game_finished(false)

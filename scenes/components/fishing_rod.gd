@@ -1,25 +1,54 @@
 extends Node2D
 
-
 @onready var road = $Road
 @onready var exclamation = $Exclamation
 @onready var exclamation_timer = $ExclamationTimer
+@onready var wait_timer = $WaitTimer
 
 
+var finished = true
 var rng = RandomNumberGenerator.new()
 
 func _ready():
 	exclamation_timer.wait_time = rng.randf_range(5.0, 10.0)
 	exclamation_timer.start()
 	exclamation_timer.timeout.connect(on_timer_exclamation_timeout)
+	GameEvents.GameStart.connect(on_game_start)
 
 func _input(event):
-	if event.is_action("shoot"):
+	if event.is_action("shoot") && !finished:
+		finished = true
 		if exclamation.visible:
-			GameEvents.ScoreWin.emit()
+			play_win_anim()
 		else:
-			GameEvents.ScoreFail.emit()
+			play_fail_anim()
 
+func play_win_anim():
+	var anim = rng.rand_range(1, 3)
+	if anim == 1:
+		road.play("win_a")
+	elif anim == 2:
+		road.play("win_b")
+	elif anim == 3:
+		road.play("win_c")
+	wait_timer.start()
+	wait_timer.timeout.connect(on_wait_timer_finished_win)
+
+func play_fail_anim():
+	road.play("fail")
+	wait_timer.start()
+	wait_timer.timeout.connect(on_wait_timer_finished_fail)
+		
+func on_wait_timer_finished_win():
+	GameEvents.ScoreWin.emit()
+	
+func on_wait_timer_finished_fail():
+	GameEvents.ScoreFail.emit()
+	
 func on_timer_exclamation_timeout():
 	exclamation.visible = true
 	exclamation.play("default")
+	
+func on_game_start():
+	finished = false
+

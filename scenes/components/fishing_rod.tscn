@@ -1,13 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3bo7j0t8dwsv"]
+[gd_scene load_steps=26 format=3 uid="uid://c3bo7j0t8dwsv"]
 
 [ext_resource type="Texture2D" uid="uid://c1a50hbb1ar2d" path="res://assets/minigamesLevels/fishing/prize_a/prize_a1.png" id="1_n5ar4"]
 [ext_resource type="Script" path="res://scenes/components/fishing_rod.gd" id="1_oln4c"]
+[ext_resource type="Texture2D" uid="uid://cesc33xxcxwts" path="res://assets/minigamesLevels/fishing/failure/failure_1.png" id="2_lc66d"]
 [ext_resource type="Texture2D" uid="uid://by6nnqyicxiy0" path="res://assets/minigamesLevels/fishing/prize_a/prize_a2.png" id="2_osngs"]
 [ext_resource type="Texture2D" uid="uid://ut0w25dr54rm" path="res://assets/minigamesLevels/fishing/prize_a/prize_a3.png" id="3_4ym2t"]
+[ext_resource type="Texture2D" uid="uid://2v52m4ibogjs" path="res://assets/minigamesLevels/fishing/failure/failure_2.png" id="3_j78d6"]
 [ext_resource type="Texture2D" uid="uid://bc38xankknku8" path="res://assets/minigamesLevels/fishing/prize_a/prize_a4.png" id="4_fvbe0"]
+[ext_resource type="Texture2D" uid="uid://bjiyr7jl0aqfr" path="res://assets/minigamesLevels/fishing/failure/failure_3.png" id="4_lbics"]
+[ext_resource type="Texture2D" uid="uid://bf8iggnwc2y1v" path="res://assets/minigamesLevels/fishing/failure/failure_4.png" id="5_0san0"]
 [ext_resource type="Texture2D" uid="uid://d0u2m17jfhfgp" path="res://assets/minigamesLevels/fishing/prize_b/prize_b1.png" id="5_njos7"]
 [ext_resource type="Texture2D" uid="uid://biwqp5hvxpflf" path="res://assets/minigamesLevels/fishing/prize_b/prize_b2.png" id="6_583cy"]
+[ext_resource type="Texture2D" uid="uid://ctvl0ps7woydd" path="res://assets/minigamesLevels/fishing/failure/failure_5.png" id="6_ltvm6"]
 [ext_resource type="Texture2D" uid="uid://bcvbfe73axyt7" path="res://assets/minigamesLevels/fishing/prize_b/prize_b3.png" id="7_56csw"]
+[ext_resource type="Texture2D" uid="uid://c7wjx85kxigbl" path="res://assets/minigamesLevels/fishing/failure/failure_6.png" id="7_qs7lw"]
 [ext_resource type="Texture2D" uid="uid://umk6nccogphm" path="res://assets/minigamesLevels/fishing/prize_b/prize_b4.png" id="8_i2ts7"]
 [ext_resource type="Texture2D" uid="uid://qwsrbw6axasm" path="res://assets/minigamesLevels/fishing/prize_c/prize_c1.png" id="9_tt6ut"]
 [ext_resource type="Texture2D" uid="uid://bfdlhbqf1khh3" path="res://assets/minigamesLevels/fishing/prize_c/prize_c2.png" id="10_kiimb"]
@@ -22,6 +28,29 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_lc66d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j78d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lbics")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0san0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ltvm6")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_qs7lw")
+}],
+"loop": false,
+"name": &"fail",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_n5ar4")
 }, {
 "duration": 1.0,
@@ -30,10 +59,10 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_4ym2t")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": ExtResource("4_fvbe0")
 }],
-"loop": true,
+"loop": false,
 "name": &"win_a",
 "speed": 10.0
 }, {
@@ -47,10 +76,10 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_56csw")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": ExtResource("8_i2ts7")
 }],
-"loop": true,
+"loop": false,
 "name": &"win_b",
 "speed": 10.0
 }, {
@@ -64,10 +93,10 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_243xt")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": ExtResource("12_d7ydw")
 }],
-"loop": true,
+"loop": false,
 "name": &"win_c",
 "speed": 10.0
 }]
@@ -98,7 +127,7 @@ script = ExtResource("1_oln4c")
 [node name="Road" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ryogo")
-animation = &"win_c"
+animation = &"fail"
 centered = false
 
 [node name="Exclamation" type="AnimatedSprite2D" parent="."]
@@ -110,3 +139,6 @@ frame_progress = 0.120102
 
 [node name="ExclamationTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 2.0
