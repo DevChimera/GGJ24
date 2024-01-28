@@ -6,3 +6,4 @@ signal GameStart
 signal GameFinished
 signal ScoreAdded
 signal GameOver
+signal GameBegin

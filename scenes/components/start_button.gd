@@ -1,5 +1,5 @@
-extends CanvasLayer
+extends Node2D
 
 func _input(event):
 	if event.is_action("shoot"):
-		print("Hello World")
+		GameEvents.GameBegin.emit()

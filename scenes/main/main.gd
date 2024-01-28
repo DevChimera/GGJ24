@@ -22,13 +22,20 @@ var current_min_comp : MiniGameComponent
 var current_lifes = 4
 var rng = RandomNumberGenerator.new()
 var difficulty = 1
-	
+var intro = false
+
+
+func _ready():
+	GameEvents.GameBegin.connect(select_minigames)
+
 func select_minigames():
-	menu.stop()
-	theme.play()
-	for i in minigames.size():
-		current_minigames.append(minigames[i])
-	next_minigame()
+	if intro:
+		intro = false
+		menu.stop()
+		theme.play()
+		for i in minigames.size():
+			current_minigames.append(minigames[i])
+		next_minigame()
 	
 func next_minigame():	
 	if min_id >= current_minigames.size():
@@ -108,6 +115,9 @@ func on_next_game_timer_timeout():
 
 func on_game_over_finished():
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+func on_game_intro_finished():
+	intro = true
 
 
 
