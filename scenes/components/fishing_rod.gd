@@ -68,6 +68,8 @@ func on_timer_exclamation_timeout():
 func on_exclamation_timer_finished():
 	if finished:
 		return
+	exclamation.visible = false
+	finished = true
 	play_fail_anim()
 	exclamation_timer.timeout.disconnect(on_exclamation_timer_finished)
 	
