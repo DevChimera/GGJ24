@@ -230,20 +230,14 @@ centered = false
 [node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x1lw3")
-animation = &"idle"
+animation = &"angry"
 autoplay = "idle"
-frame_progress = 0.429636
 centered = false
 
 [node name="Banners" type="Node2D" parent="."]
 
-[node name="Banner" type="AnimatedSprite2D" parent="Banners"]
-position = Vector2(33, 93)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_nrw76")
-
-[node name="Banner2" type="AnimatedSprite2D" parent="Banners"]
-position = Vector2(102, 93)
+[node name="Banner4" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(352, 93)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nrw76")
 
@@ -252,7 +246,15 @@ position = Vector2(282, 93)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nrw76")
 
-[node name="Banner4" type="AnimatedSprite2D" parent="Banners"]
-position = Vector2(352, 93)
+[node name="Banner2" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(102, 93)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="Banner" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(33, 93)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="NextGameTimer" type="Timer" parent="."]
+wait_time = 3.0
