@@ -19,6 +19,7 @@ var difficulty = 1
 var current_score = 0
 var current_fails = 0
 var victory
+var finished = false
 
 func _ready():
 	timer.wait_time = time
@@ -43,6 +44,7 @@ func on_score_fail():
 		on_game_finished(false)
 
 func on_game_finished(_victory: bool):
+	finished = true
 	victory = _victory
 	animation.play("fade_out")
 	
@@ -58,5 +60,6 @@ func start_minigame():
 	GameEvents.GameStart.emit()
 	
 func on_timer_timeout():
-	timebar.pause()
-	on_game_finished(false)
+	if !finished:
+		timebar.pause()
+		on_game_finished(false)

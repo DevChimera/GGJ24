@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxagpuedt75vj"]
+
+[ext_resource type="Script" path="res://scenes/autoload/meta_score.gd" id="1_bqprg"]
+
+[node name="MetaScore" type="Node"]
+script = ExtResource("1_bqprg")
