@@ -1,7 +1,8 @@
-[gd_scene load_steps=98 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=99 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
 [ext_resource type="Texture2D" uid="uid://ckri4yoacgfrp" path="res://assets/king/throneRoom.png" id="2_pev2q"]
+[ext_resource type="PackedScene" uid="uid://orvmuvl5s71m" path="res://scenes/components/score.tscn" id="2_tugwq"]
 [ext_resource type="Texture2D" uid="uid://caq10bxesg0vp" path="res://assets/king/kingANGRY/angry_1.png" id="3_dvo2i"]
 [ext_resource type="Texture2D" uid="uid://c0afxtgg8aucg" path="res://assets/king/kingANGRY/angry_2.png" id="4_o3st3"]
 [ext_resource type="Texture2D" uid="uid://da3dsejj6ql21" path="res://assets/king/kingANGRY/angry_3.png" id="5_yovnk"]
@@ -494,6 +495,9 @@ _data = {
 
 [node name="Main" type="Node"]
 script = ExtResource("1_omxc1")
+
+[node name="Score" parent="." instance=ExtResource("2_tugwq")]
+visible = false
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
