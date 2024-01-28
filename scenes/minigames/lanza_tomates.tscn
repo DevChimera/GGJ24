@@ -73,7 +73,7 @@ _data = {
 "fade_out": SubResource("Animation_m3eei")
 }
 
-[node name="LanzaTomates" type="Node2D"]
+[node name="LanzaTomates" type="Node2D" groups=["tomato"]]
 position = Vector2(0, -200)
 
 [node name="MiniGameComponent" parent="." node_paths=PackedStringArray("animation", "timebar") instance=ExtResource("1_lpbuu")]

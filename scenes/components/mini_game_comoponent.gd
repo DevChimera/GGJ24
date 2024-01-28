@@ -15,6 +15,7 @@ signal GameFinished (win : bool)
 @export var animation : AnimationPlayer
 @export var timebar : AnimatedSprite2D
 
+var difficulty = 1
 var current_score = 0
 var current_fails = 0
 var victory
@@ -51,7 +52,6 @@ func on_fade_out_finished():
 func on_fade_out_started():
 	GameEvents.GameFinished.emit()
 	
-
 func start_minigame():
 	timer.start()
 	timebar.play("default")

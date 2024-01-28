@@ -144,7 +144,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Expand" type="Node2D"]
+[node name="Expand" type="Node2D" groups=["expand"]]
 position = Vector2(0, -174.033)
 script = ExtResource("1_lwgiy")
 
