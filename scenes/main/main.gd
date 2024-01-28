@@ -17,7 +17,7 @@ extends Node
 @onready var laugh_voice = $Kingbackground/LaughVoice
 
 
-var minigames : Array = [preload("res://scenes/minigames/fishing.tscn"), \
+var minigames : Array = [preload("res://scenes/minigames/lanza_tomates.tscn"), \
 				preload("res://scenes/minigames/fishing.tscn"), \
 				preload("res://scenes/minigames/expand.tscn")]
 
