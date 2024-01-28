@@ -5,6 +5,7 @@ extends Node2D
 @onready var exclamation_timer = $ExclamationTimer
 @onready var wait_timer = $WaitTimer
 
+@export var click_time = 1
 
 var finished = true
 var rng = RandomNumberGenerator.new()
@@ -24,7 +25,8 @@ func _input(event):
 			play_fail_anim()
 
 func play_win_anim():
-	var anim = rng.rand_range(1, 3)
+	var anim = rng.randi_range(1, 3)
+	print(anim)
 	if anim == 1:
 		road.play("win_a")
 	elif anim == 2:
@@ -38,7 +40,7 @@ func play_fail_anim():
 	road.play("fail")
 	wait_timer.start()
 	wait_timer.timeout.connect(on_wait_timer_finished_fail)
-		
+
 func on_wait_timer_finished_win():
 	GameEvents.ScoreWin.emit()
 	
@@ -46,8 +48,19 @@ func on_wait_timer_finished_fail():
 	GameEvents.ScoreFail.emit()
 	
 func on_timer_exclamation_timeout():
-	exclamation.visible = true
-	exclamation.play("default")
+	if exclamation.visible:
+		play_fail_anim()
+	else:
+		exclamation.visible = true
+		exclamation.play("default")
+		exclamation_timer.wait_time = click_time
+		exclamation_timer.start()
+		exclamation_timer.timeout.disconnect(on_timer_exclamation_timeout)
+		exclamation_timer.timeout.connect(on_exclamation_timer_finished)
+		
+func on_exclamation_timer_finished():
+	play_fail_anim()
+	exclamation_timer.timeout.disconnect(on_exclamation_timer_finished)
 	
 func on_game_start():
 	finished = false

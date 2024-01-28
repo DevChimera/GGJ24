@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=52 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
 [ext_resource type="Texture2D" uid="uid://ckri4yoacgfrp" path="res://assets/king/throneRoom.png" id="2_pev2q"]
@@ -32,6 +32,23 @@
 [ext_resource type="Texture2D" uid="uid://bd57ywccittj3" path="res://assets/king/kingLAUGH/laugh_12.png" id="30_86phk"]
 [ext_resource type="Texture2D" uid="uid://biw7frgkyrrls" path="res://assets/king/kingLAUGH/laugh_13.png" id="31_2cf43"]
 [ext_resource type="Texture2D" uid="uid://b76vasx44o8me" path="res://assets/king/kingLAUGH/laugh_14.png" id="32_66igy"]
+[ext_resource type="Texture2D" uid="uid://22olq2a0f82d" path="res://assets/banner/banner_1.png" id="33_pk5u2"]
+[ext_resource type="Texture2D" uid="uid://djkwtwbh1acnu" path="res://assets/banner/banner_2.png" id="34_th5s3"]
+[ext_resource type="Texture2D" uid="uid://ioo5ssipf3ye" path="res://assets/banner/banner_3.png" id="35_g07p3"]
+[ext_resource type="Texture2D" uid="uid://dd5w8wofbrlrw" path="res://assets/banner/banner_4.png" id="36_3orca"]
+[ext_resource type="Texture2D" uid="uid://dbo5u04m8levb" path="res://assets/banner/banner_5.png" id="37_jq4fy"]
+[ext_resource type="Texture2D" uid="uid://d11f0qvbkmw7f" path="res://assets/banner/banner_6.png" id="38_7o8xo"]
+[ext_resource type="Texture2D" uid="uid://dayxukl70sijv" path="res://assets/banner/banner_7.png" id="39_h1rqj"]
+[ext_resource type="Texture2D" uid="uid://d0r225laqay1a" path="res://assets/banner/banner_8.png" id="40_1supe"]
+[ext_resource type="Texture2D" uid="uid://cyekbtlsh4dmn" path="res://assets/banner/banner_9.png" id="41_si1x6"]
+[ext_resource type="Texture2D" uid="uid://cum3epsmeuvpx" path="res://assets/banner/banner_10.png" id="42_3ejbi"]
+[ext_resource type="Texture2D" uid="uid://pnarfr4sx2wj" path="res://assets/banner/banner_11.png" id="43_wk06q"]
+[ext_resource type="Texture2D" uid="uid://ck7ix7kql2ris" path="res://assets/banner/banner_12.png" id="44_y0hgq"]
+[ext_resource type="Texture2D" uid="uid://3r2sfyfr5d3t" path="res://assets/banner/banner_13.png" id="45_agfa0"]
+[ext_resource type="Texture2D" uid="uid://bfshxtonkw7xt" path="res://assets/banner/banner_14.png" id="46_0sbx5"]
+[ext_resource type="Texture2D" uid="uid://bdye84taqfqcj" path="res://assets/banner/banner_15.png" id="47_e2q4c"]
+[ext_resource type="Texture2D" uid="uid://bmtxdkhc4xjp3" path="res://assets/banner/banner_16.png" id="48_uqjo2"]
+[ext_resource type="Texture2D" uid="uid://bpob6sq3ipnyx" path="res://assets/banner/banner_17.png" id="49_44p0f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1lw3"]
 animations = [{
@@ -141,6 +158,65 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrw76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_pk5u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_th5s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_g07p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3orca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_jq4fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7o8xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_h1rqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_1supe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_si1x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3ejbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wk06q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_y0hgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_agfa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0sbx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_e2q4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_uqjo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_44p0f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Main" type="Node"]
 script = ExtResource("1_omxc1")
 
@@ -158,3 +234,25 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.429636
 centered = false
+
+[node name="Banners" type="Node2D" parent="."]
+
+[node name="Banner" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(33, 93)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="Banner2" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(102, 93)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="Banner3" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(282, 93)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="Banner4" type="AnimatedSprite2D" parent="Banners"]
+position = Vector2(352, 93)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nrw76")
