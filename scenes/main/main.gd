@@ -7,6 +7,7 @@ extends Node
 @onready var game_over = $GameOver/AnimationPlayer
 @onready var theme = $Theme
 @onready var menu = $Menu
+@onready var animation_player = $Intro/AnimationPlayer
 
 #SFX
 @onready var angry_fist = $Kingbackground/AngryFist
@@ -34,6 +35,7 @@ func _ready():
 
 func select_minigames():
 	if intro:
+		animation_player.play("menu")
 		self.find_child("StartButton").queue_free()
 		intro = false
 		menu.stop()
@@ -126,6 +128,7 @@ func on_game_over_finished():
 
 func on_game_intro_finished():
 	intro = true
+
 
 
 
