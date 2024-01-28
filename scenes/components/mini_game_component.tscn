@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq7fd3xpt00do"]
+[gd_scene load_steps=4 format=3 uid="uid://cq7fd3xpt00do"]
 
 [ext_resource type="Script" path="res://scenes/components/mini_game_comoponent.gd" id="1_812jt"]
+[ext_resource type="AudioStream" uid="uid://v6w2dc1yml6p" path="res://assets/sfx/LML-SFX-Swipe_2.wav" id="2_3oe2j"]
+[ext_resource type="AudioStream" uid="uid://csbjmldy7h6hm" path="res://assets/sfx/LML-SFX-Swipe_1.wav" id="3_4o4rh"]
 
 [node name="MiniGameComponent" type="Node"]
 script = ExtResource("1_812jt")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="SwipeIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3oe2j")
+
+[node name="SwipeOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4o4rh")

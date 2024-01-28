@@ -8,8 +8,12 @@ extends Node
 @onready var theme = $Theme
 @onready var menu = $Menu
 
+#SFX
+@onready var angry_fist = $Kingbackground/AngryFist
+@onready var angry_voice = $Kingbackground/AngryVoice
+@onready var laugh_fist = $Kingbackground/LaughFist
+@onready var laugh_voice = $Kingbackground/LaughVoice
 
-@export var total_minigames = 3
 
 var minigames : Array = [preload("res://scenes/minigames/lanza_tomates.tscn"), \
 				preload("res://scenes/minigames/fishing.tscn"), \
@@ -95,9 +99,13 @@ func on_game_finished(win : bool):
 	current_min.queue_free()
 	if !win:
 		remove_banner()
+		angry_fist.play()
+		angry_voice.play()
 		king.play("angry")
 	else:
 		GameEvents.ScoreAdded.emit()
+		laugh_fist.play()
+		laugh_voice.play()
 		king.play("laugh")
 		
 	if current_lifes <= 0:
@@ -105,7 +113,6 @@ func on_game_finished(win : bool):
 		game_over.play("game_over")
 		GameEvents.GameOver.emit()
 		return
-	print("OTRO JUEGO")
 	next_game_timer.start()
 	next_game_timer.timeout.connect(on_next_game_timer_timeout)
 

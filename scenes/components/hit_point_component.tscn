@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxjsr6kf721rf"]
+[gd_scene load_steps=5 format=3 uid="uid://dxjsr6kf721rf"]
 
 [ext_resource type="Script" path="res://scenes/components/hit_point_component.gd" id="1_kiuyy"]
 [ext_resource type="Texture2D" uid="uid://b8j671vhkv1qx" path="res://assets/minigamesLevels/tomato/face_a.png" id="2_urqwo"]
+[ext_resource type="AudioStream" uid="uid://cq81t1r273w5y" path="res://assets/sfx/LML-SFX-tomato_person_hit.wav" id="3_enm5f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qcm4"]
 radius = 12.0
@@ -17,5 +18,8 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0qcm4")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_enm5f")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

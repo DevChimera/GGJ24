@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=66 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
 [ext_resource type="Texture2D" uid="uid://ckri4yoacgfrp" path="res://assets/king/throneRoom.png" id="2_pev2q"]
@@ -50,10 +50,14 @@
 [ext_resource type="Texture2D" uid="uid://bmtxdkhc4xjp3" path="res://assets/banner/banner_16.png" id="48_uqjo2"]
 [ext_resource type="Texture2D" uid="uid://bpob6sq3ipnyx" path="res://assets/banner/banner_17.png" id="49_44p0f"]
 [ext_resource type="Texture2D" uid="uid://sdo0s2abijwg" path="res://assets/vignette.png" id="50_83igm"]
+[ext_resource type="AudioStream" uid="uid://cwcjcnw2hqdod" path="res://assets/sfx/LML-SFX-Angry_fist.wav" id="50_tp2i4"]
 [ext_resource type="AudioStream" uid="uid://cj57ahp25d2v4" path="res://assets/music/LML-Intro.wav" id="51_gcxsp"]
+[ext_resource type="AudioStream" uid="uid://cb28mjrreqtj1" path="res://assets/sfx/LML-SFX-Angry_voice.wav" id="51_n16ea"]
 [ext_resource type="AudioStream" uid="uid://ca4k2sg2fto30" path="res://assets/music/LML-Menu.wav" id="52_ou0in"]
+[ext_resource type="AudioStream" uid="uid://fk6l6oykexh0" path="res://assets/sfx/LML-SFX-Laugh_fist.wav" id="52_p0p7l"]
 [ext_resource type="AudioStream" uid="uid://6wjx0sft12kc" path="res://assets/music/LML-GameOver.wav" id="53_0ky6b"]
 [ext_resource type="AudioStream" uid="uid://6u6ul50rj7uu" path="res://assets/music/LML-Theme.wav" id="53_4bw28"]
+[ext_resource type="AudioStream" uid="uid://cv556g6mash0u" path="res://assets/sfx/LML-SFX-Laugh_voice.wav" id="53_8ybh1"]
 [ext_resource type="PackedScene" uid="uid://qwwd0eb7r4s0" path="res://scenes/components/start_button.tscn" id="55_o551l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nrw76"]
@@ -350,6 +354,18 @@ frame = 13
 frame_progress = 1.0
 centered = false
 
+[node name="AngryFist" type="AudioStreamPlayer" parent="Kingbackground"]
+stream = ExtResource("50_tp2i4")
+
+[node name="AngryVoice" type="AudioStreamPlayer" parent="Kingbackground"]
+stream = ExtResource("51_n16ea")
+
+[node name="LaughFist" type="AudioStreamPlayer" parent="Kingbackground"]
+stream = ExtResource("52_p0p7l")
+
+[node name="LaughVoice" type="AudioStreamPlayer" parent="Kingbackground"]
+stream = ExtResource("53_8ybh1")
+
 [node name="NextGameTimer" type="Timer" parent="."]
 wait_time = 3.0
 
@@ -378,6 +394,7 @@ stream = ExtResource("52_ou0in")
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("53_4bw28")
+volume_db = -20.0
 
 [node name="GameOver" type="Node2D" parent="."]
 

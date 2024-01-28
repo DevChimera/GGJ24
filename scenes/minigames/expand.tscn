@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dipvo51oq0nx3"]
+[gd_scene load_steps=30 format=3 uid="uid://dipvo51oq0nx3"]
 
 [ext_resource type="Script" path="res://scenes/minigames/expand.gd" id="1_lwgiy"]
 [ext_resource type="PackedScene" uid="uid://cq7fd3xpt00do" path="res://scenes/components/mini_game_component.tscn" id="1_qfuty"]
@@ -18,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://c371xo5kdnh5p" path="res://assets/minigamesLevels/expand/expand/expand_5.png" id="15_rlxb6"]
 [ext_resource type="Texture2D" uid="uid://cy1ytygnrct8r" path="res://assets/minigamesLevels/expand/expand/expand_6.png" id="16_pdjjg"]
 [ext_resource type="Texture2D" uid="uid://ct0cm41f2xh22" path="res://assets/minigamesLevels/expand/expand/expand_7.png" id="17_rsmp4"]
+[ext_resource type="AudioStream" uid="uid://boicvfqkee2kh" path="res://assets/sfx/LML-SFX-Inflate_1.wav" id="19_1bvx8"]
+[ext_resource type="AudioStream" uid="uid://b1y8siw1t2j2a" path="res://assets/sfx/LML-SFX-Inflate_2.wav" id="20_s3fyr"]
+[ext_resource type="AudioStream" uid="uid://dyweoypmkthca" path="res://assets/sfx/LML-SFX-Inflate_3.wav" id="21_gptd8"]
+[ext_resource type="AudioStream" uid="uid://1sdfkei46fx" path="res://assets/sfx/LML-SFX-Inflate_4.wav" id="22_vdjcg"]
+[ext_resource type="AudioStream" uid="uid://c18oodgev6rgp" path="res://assets/sfx/LML-SFX-Inflate_5.wav" id="23_wwqgq"]
+[ext_resource type="AudioStream" uid="uid://csiauh4fdikea" path="res://assets/sfx/LML-SFX-Inflate_6.wav" id="24_k3mi6"]
 
 [sub_resource type="Animation" id="Animation_wbd2d"]
 resource_name = "fade_int"
@@ -179,3 +185,23 @@ sprite_frames = SubResource("SpriteFrames_aslu3")
 position = Vector2(129, 95.0332)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3f1pw")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("19_1bvx8")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("20_s3fyr")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_gptd8")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_vdjcg")
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("23_wwqgq")
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("24_k3mi6")

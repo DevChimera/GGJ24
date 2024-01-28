@@ -5,6 +5,8 @@ extends Node2D
 @export var velocity : float = 1
 @onready var shoot_delay = $ShootDelay
 
+@onready var launch = $Launch
+
 var bullet = preload("res://scenes/components/bullet.tscn")
 var can_shoot : bool = false
 var game_finished : bool = false
@@ -23,6 +25,7 @@ func _input(event):
 func shoot():
 	if !can_shoot:
 		return
+	launch.play()
 	animation_player.pause()
 	rotation_state = animation_player.current_animation_position
 	can_shoot = false

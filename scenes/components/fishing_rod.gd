@@ -4,6 +4,9 @@ extends Node2D
 @onready var exclamation = $Exclamation
 @onready var exclamation_timer = $ExclamationTimer
 @onready var wait_timer = $WaitTimer
+@onready var water = $"../Water"
+@onready var water_splash = $"../WaterSplash"
+@onready var fish_alert = $"../FishAlert"
 
 @export var click_time = 1
 
@@ -11,6 +14,7 @@ var finished = true
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	water.play()
 	exclamation_timer.wait_time = rng.randf_range(5.0, 10.0)
 	exclamation_timer.start()
 	exclamation_timer.timeout.connect(on_timer_exclamation_timeout)
@@ -25,6 +29,7 @@ func _input(event):
 			play_fail_anim()
 
 func play_win_anim():
+	water_splash.play()
 	var anim = rng.randi_range(1, 3)
 	print(anim)
 	if anim == 1:
@@ -37,6 +42,7 @@ func play_win_anim():
 	wait_timer.timeout.connect(on_wait_timer_finished_win)
 
 func play_fail_anim():
+	water_splash.play()
 	road.play("fail")
 	wait_timer.start()
 	wait_timer.timeout.connect(on_wait_timer_finished_fail)
@@ -49,11 +55,10 @@ func on_wait_timer_finished_fail():
 	
 func on_timer_exclamation_timeout():
 	if exclamation.visible:
-		print("ETSABA VISIBLE")
 		play_fail_anim()
 	else:
-		print("NO ETSABA VISIBLE")
 		exclamation.visible = true
+		fish_alert.play()
 		exclamation.play("default")
 		exclamation_timer.wait_time = click_time
 		exclamation_timer.start()

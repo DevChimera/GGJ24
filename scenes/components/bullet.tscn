@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2mvg8yo7cd8i"]
+[gd_scene load_steps=15 format=3 uid="uid://b2mvg8yo7cd8i"]
 
 [ext_resource type="Script" path="res://scenes/components/bullet.gd" id="1_c3cn7"]
 [ext_resource type="Texture2D" uid="uid://cjej6jkp8wf8i" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_1.png" id="1_k1tqp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bol6xfabw1mlk" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_6.png" id="5_8nmcl"]
 [ext_resource type="Texture2D" uid="uid://d1v2urirminhp" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_5.png" id="5_ns7im"]
 [ext_resource type="Texture2D" uid="uid://bkh0pry04oybp" path="res://assets/minigamesLevels/tomato/tomatoLaunch/tomateLaunch_7.png" id="6_th1od"]
+[ext_resource type="AudioStream" uid="uid://ba43ro46o0hb2" path="res://assets/sfx/LML-SFX-tomato_hit.wav" id="8_wdjjq"]
 
 [sub_resource type="Curve2D" id="Curve2D_jbypm"]
 _data = {
@@ -107,5 +108,8 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
 shape = SubResource("CircleShape2D_qgxj2")
+
+[node name="TomatoHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wdjjq")
 
 [connection signal="area_entered" from="PathFollow2D/Area2D" to="." method="_on_area_2d_area_entered"]

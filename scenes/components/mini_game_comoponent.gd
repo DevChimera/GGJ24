@@ -15,7 +15,9 @@ signal GameFinished (win : bool)
 @export var animation : AnimationPlayer
 @export var timebar : AnimatedSprite2D
 
-var difficulty = 1
+@onready var swipe_out = $SwipeOut
+@onready var swipe_in = $SwipeIn
+
 var current_score = 0
 var current_fails = 0
 var victory
@@ -33,7 +35,7 @@ func set_timebar():
 	timebar.speed_scale = 18.3 / time
 
 func on_score_win():
-	print(current_score)
+#	print(current_score)
 	current_score += 1
 	if current_score >= win_score:
 		on_game_finished(true)
@@ -47,6 +49,7 @@ func on_game_finished(_victory: bool):
 	finished = true
 	victory = _victory
 	animation.play("fade_out")
+	swipe_out.play()
 	
 func on_fade_out_finished():
 	GameFinished.emit(victory)
