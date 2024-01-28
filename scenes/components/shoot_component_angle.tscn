@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfeaob1ulb3sb"]
+[gd_scene load_steps=12 format=3 uid="uid://bfeaob1ulb3sb"]
 
 [ext_resource type="Script" path="res://scenes/components/shoot_component_angle.gd" id="1_1yb3v"]
 [ext_resource type="Texture2D" uid="uid://dmfmqktx38ljp" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_4.png" id="2_hkefq"]
 [ext_resource type="Texture2D" uid="uid://y1a38h8hq31s" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_1.png" id="3_7glx5"]
 [ext_resource type="Texture2D" uid="uid://5fyoycx41rfk" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_2.png" id="4_vg5ok"]
 [ext_resource type="Texture2D" uid="uid://d2yykawavdcqy" path="res://assets/minigamesLevels/tomato/tirachinas/tirachinas_3.png" id="5_t3ycq"]
+[ext_resource type="Texture2D" uid="uid://b6kde7b8c7r6f" path="res://assets/minigamesLevels/tomato/pointer.png" id="6_c3rkf"]
 [ext_resource type="AudioStream" uid="uid://c31e5crxno0mp" path="res://assets/sfx/LML-SFX-tomato_lauch.wav" id="6_y0d00"]
 
 [sub_resource type="Animation" id="Animation_ayyje"]
@@ -98,6 +99,11 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hkefq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -146)
+scale = Vector2(2, 2)
+texture = ExtResource("6_c3rkf")
 
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 0.4
