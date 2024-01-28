@@ -4,6 +4,9 @@ extends Node
 @onready var banners = $Banners
 @onready var king = $Kingbackground/King
 @onready var next_game_timer = $NextGameTimer
+@onready var game_over = $Node2D/AnimationPlayer
+@onready var theme = $Theme
+
 
 @export var total_minigames = 5
 
@@ -21,6 +24,7 @@ var difficulty = 1
 
 
 func select_minigames():
+	theme.play()
 	for i in minigames.size():
 		current_minigames.append(minigames[i])
 	var rest_minigames = total_minigames - minigames.size()
@@ -77,7 +81,7 @@ func remove_banner():
 	
 func on_game_finished(win : bool):
 	if current_lifes == 0:
-		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+		game_over.play("game_over")
 	if !win:
 		remove_banner()
 		king.play("angry")
@@ -91,6 +95,9 @@ func on_next_game_timer_timeout():
 	next_minigame()
 	king.play("idle")
 	next_game_timer.timeout.disconnect(on_next_game_timer_timeout)
+
+func on_game_over_finished():
+	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
 
