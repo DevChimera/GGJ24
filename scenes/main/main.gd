@@ -19,8 +19,6 @@ var current_lifes = 4
 var rng = RandomNumberGenerator.new()
 var difficulty = 1
 
-func _ready():
-	select_minigames()
 
 func select_minigames():
 	for i in minigames.size():
