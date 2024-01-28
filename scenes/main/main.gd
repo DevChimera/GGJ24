@@ -30,6 +30,7 @@ func _ready():
 
 func select_minigames():
 	if intro:
+		self.find_child("StartButton").queue_free()
 		intro = false
 		menu.stop()
 		theme.play()
