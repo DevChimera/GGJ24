@@ -49,8 +49,10 @@ func on_wait_timer_finished_fail():
 	
 func on_timer_exclamation_timeout():
 	if exclamation.visible:
+		print("ETSABA VISIBLE")
 		play_fail_anim()
 	else:
+		print("NO ETSABA VISIBLE")
 		exclamation.visible = true
 		exclamation.play("default")
 		exclamation_timer.wait_time = click_time
@@ -59,6 +61,8 @@ func on_timer_exclamation_timeout():
 		exclamation_timer.timeout.connect(on_exclamation_timer_finished)
 		
 func on_exclamation_timer_finished():
+	if finished:
+		return
 	play_fail_anim()
 	exclamation_timer.timeout.disconnect(on_exclamation_timer_finished)
 	

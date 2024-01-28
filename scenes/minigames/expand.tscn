@@ -166,7 +166,7 @@ texture = ExtResource("2_3hn5j")
 centered = false
 
 [node name="TimeBar" parent="." instance=ExtResource("2_opw5p")]
-position = Vector2(197, 18)
+position = Vector2(192, 13.0332)
 
 [node name="Visuals" type="Node2D" parent="."]
 
@@ -176,6 +176,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_aslu3")
 
 [node name="Bolardo" type="AnimatedSprite2D" parent="Visuals"]
-position = Vector2(137, 103)
+position = Vector2(129, 95.0332)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3f1pw")

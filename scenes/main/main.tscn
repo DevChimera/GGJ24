@@ -154,7 +154,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_5eniw")
 }],
-"loop": true,
+"loop": false,
 "name": &"angry",
 "speed": 10.0
 }, {
@@ -212,7 +212,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("32_66igy")
 }],
-"loop": true,
+"loop": false,
 "name": &"laugh",
 "speed": 10.0
 }]
@@ -252,7 +252,7 @@ sprite_frames = SubResource("SpriteFrames_nrw76")
 [node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x1lw3")
-animation = &"angry"
+animation = &"idle"
 autoplay = "idle"
 centered = false
 

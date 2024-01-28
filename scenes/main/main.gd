@@ -41,18 +41,19 @@ func remove_banner():
 	
 func on_game_finished(win : bool):
 	if current_lifes == 0:
-		return
+		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 	if !win:
 		remove_banner()
 		king.play("angry")
 	else:
 		king.play("laugh")
+	current_min.queue_free()
 	next_game_timer.start()
 	next_game_timer.timeout.connect(on_next_game_timer_timeout)
 
 func on_next_game_timer_timeout():
-	current_min.queue_free()
 	next_minigame()
+	king.play("idle")
 	next_game_timer.timeout.disconnect(on_next_game_timer_timeout)
 
 
