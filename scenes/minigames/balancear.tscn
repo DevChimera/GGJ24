@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfq8a7c7riv35"]
-
-[ext_resource type="PackedScene" uid="uid://cq7fd3xpt00do" path="res://scenes/components/mini_game_component.tscn" id="1_qt1cg"]
-
-[node name="Balancear" type="Node"]
-
-[node name="MiniGameComponent" parent="." instance=ExtResource("1_qt1cg")]
-key = "balancear"

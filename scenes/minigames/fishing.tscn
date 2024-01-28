@@ -69,10 +69,11 @@ _data = {
 "fade_out": SubResource("Animation_f6io2")
 }
 
-[node name="Finishing" type="Node2D"]
+[node name="Finishing" type="Node2D" groups=["fishing"]]
 position = Vector2(0, -200)
 
 [node name="MiniGameComponent" parent="." node_paths=PackedStringArray("animation", "timebar") instance=ExtResource("1_ru7nw")]
+time = 20.0
 win_score = 1
 fails_score = 1
 animation = NodePath("../AnimationPlayer")
