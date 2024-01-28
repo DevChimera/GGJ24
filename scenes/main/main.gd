@@ -128,6 +128,7 @@ func on_game_over_finished():
 
 func on_game_intro_finished():
 	intro = true
+	animation_player.play("menu_out")
 
 
 

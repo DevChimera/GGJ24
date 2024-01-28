@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://ywc1r01ngctr"]
+[gd_scene load_steps=98 format=3 uid="uid://ywc1r01ngctr"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_omxc1"]
 [ext_resource type="Texture2D" uid="uid://ckri4yoacgfrp" path="res://assets/king/throneRoom.png" id="2_pev2q"]
@@ -420,10 +420,39 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(-200, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_a5tp8"]
+resource_name = "menu_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.594604, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20p3d"]
 _data = {
 "intro": SubResource("Animation_tbwje"),
-"menu": SubResource("Animation_ymis7")
+"menu": SubResource("Animation_ymis7"),
+"menu_out": SubResource("Animation_a5tp8")
 }
 
 [sub_resource type="Animation" id="Animation_xgggu"]
@@ -525,12 +554,14 @@ position = Vector2(195, 185)
 [node name="Intro" type="Node2D" parent="."]
 
 [node name="Menu" type="Sprite2D" parent="Intro"]
+position = Vector2(-200, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("55_tdwys")
 centered = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Intro"]
-scale = Vector2(2, 2)
+position = Vector2(-200, 0)
+scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_rbt1a")
 autoplay = "default"
 centered = false
