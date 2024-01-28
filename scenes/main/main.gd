@@ -7,8 +7,9 @@ extends Node
 
 @export var total_minigames = 2
 
-var minigames = [preload("res://scenes/minigames/lanza_tomates.tscn"), \
-				preload("res://scenes/minigames/fishing.tscn")]
+var minigames = [preload("res://scenes/minigames/expand.tscn"), \
+				preload("res://scenes/minigames/fishing.tscn"), \
+				preload("res://scenes/minigames/expand.tscn")]
 
 var current_minigames = []
 var min_id = 0

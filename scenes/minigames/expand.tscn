@@ -1,0 +1,181 @@
+[gd_scene load_steps=24 format=3 uid="uid://dipvo51oq0nx3"]
+
+[ext_resource type="Script" path="res://scenes/minigames/expand.gd" id="1_lwgiy"]
+[ext_resource type="PackedScene" uid="uid://cq7fd3xpt00do" path="res://scenes/components/mini_game_component.tscn" id="1_qfuty"]
+[ext_resource type="Texture2D" uid="uid://dv7lw58dp08eg" path="res://assets/minigamesLevels/expand/expandBG.png" id="2_3hn5j"]
+[ext_resource type="PackedScene" uid="uid://gb0cjaaa15g" path="res://scenes/components/time_bar.tscn" id="2_opw5p"]
+[ext_resource type="Texture2D" uid="uid://cm6r5hc8yc6yl" path="res://assets/minigamesLevels/expand/expand/expandAnim_1.png" id="4_8d8pw"]
+[ext_resource type="Texture2D" uid="uid://bjnvi0ds6gh7r" path="res://assets/minigamesLevels/expand/expand/expandAnim_2.png" id="5_nbx3b"]
+[ext_resource type="Texture2D" uid="uid://ddrdf7fdhmpq2" path="res://assets/minigamesLevels/expand/expand/expandAnim_3.png" id="6_covox"]
+[ext_resource type="Texture2D" uid="uid://c40bgjjagspmg" path="res://assets/minigamesLevels/expand/expand/expandAnim_4.png" id="7_16jtr"]
+[ext_resource type="Texture2D" uid="uid://dt4sgvhh4oa3j" path="res://assets/minigamesLevels/expand/expand/expandAnim_5.png" id="8_xc0wg"]
+[ext_resource type="Texture2D" uid="uid://ccd1k6qdtuhpt" path="res://assets/minigamesLevels/expand/expand/expandAnim_6.png" id="9_uuscc"]
+[ext_resource type="Texture2D" uid="uid://5cbrnkrmd72r" path="res://assets/minigamesLevels/expand/expand/expandAnim_7.png" id="10_73f4m"]
+[ext_resource type="Texture2D" uid="uid://d01o7wj886hce" path="res://assets/minigamesLevels/expand/expand/expand_1.png" id="11_1jnli"]
+[ext_resource type="Texture2D" uid="uid://be875qxmit7ug" path="res://assets/minigamesLevels/expand/expand/expand_2.png" id="12_ohk4g"]
+[ext_resource type="Texture2D" uid="uid://bi05skcp2gkpw" path="res://assets/minigamesLevels/expand/expand/expand_3.png" id="13_wfi6c"]
+[ext_resource type="Texture2D" uid="uid://qdufcqlvmfni" path="res://assets/minigamesLevels/expand/expand/expand_4.png" id="14_r7y0l"]
+[ext_resource type="Texture2D" uid="uid://c371xo5kdnh5p" path="res://assets/minigamesLevels/expand/expand/expand_5.png" id="15_rlxb6"]
+[ext_resource type="Texture2D" uid="uid://cy1ytygnrct8r" path="res://assets/minigamesLevels/expand/expand/expand_6.png" id="16_pdjjg"]
+[ext_resource type="Texture2D" uid="uid://ct0cm41f2xh22" path="res://assets/minigamesLevels/expand/expand/expand_7.png" id="17_rsmp4"]
+
+[sub_resource type="Animation" id="Animation_wbd2d"]
+resource_name = "fade_int"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.62451, 1),
+"update": 0,
+"values": [Vector2(0, -200), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MiniGameComponent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_minigame"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mcp3w"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.8025, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MiniGameComponent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"on_fade_out_started"
+}, {
+"args": [],
+"method": &"on_fade_out_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyfjo"]
+_data = {
+"fade_int": SubResource("Animation_wbd2d"),
+"fade_out": SubResource("Animation_mcp3w")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aslu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8d8pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nbx3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_covox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_16jtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xc0wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uuscc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_73f4m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3f1pw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1jnli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ohk4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wfi6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_r7y0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rlxb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pdjjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rsmp4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Expand" type="Node2D"]
+position = Vector2(0, -174.033)
+script = ExtResource("1_lwgiy")
+
+[node name="MiniGameComponent" parent="." node_paths=PackedStringArray("animation", "timebar") instance=ExtResource("1_qfuty")]
+time = 5.0
+win_score = 1
+animation = NodePath("../AnimationPlayer")
+timebar = NodePath("../TimeBar")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_int"
+libraries = {
+"": SubResource("AnimationLibrary_cyfjo")
+}
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_3hn5j")
+centered = false
+
+[node name="TimeBar" parent="." instance=ExtResource("2_opw5p")]
+position = Vector2(197, 18)
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Palanca" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(204, 108)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aslu3")
+
+[node name="Bolardo" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(137, 103)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3f1pw")

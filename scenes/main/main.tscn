@@ -50,6 +50,65 @@
 [ext_resource type="Texture2D" uid="uid://bmtxdkhc4xjp3" path="res://assets/banner/banner_16.png" id="48_uqjo2"]
 [ext_resource type="Texture2D" uid="uid://bpob6sq3ipnyx" path="res://assets/banner/banner_17.png" id="49_44p0f"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrw76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_pk5u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_th5s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_g07p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3orca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_jq4fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7o8xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_h1rqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_1supe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_si1x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3ejbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wk06q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_y0hgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_agfa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0sbx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_e2q4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_uqjo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_44p0f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1lw3"]
 animations = [{
 "frames": [{
@@ -158,80 +217,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nrw76"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("33_pk5u2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_th5s3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_g07p3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_3orca")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_jq4fy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_7o8xo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_h1rqj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_1supe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_si1x6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_3ejbi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_wk06q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_y0hgq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_agfa0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_0sbx5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_e2q4c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_uqjo2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_44p0f")
-}],
-"loop": false,
-"name": &"default",
-"speed": 10.0
-}]
-
 [node name="Main" type="Node"]
 script = ExtResource("1_omxc1")
 
-[node name="Kingbackground" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Kingbackground"]
+[node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_pev2q")
-centered = false
-
-[node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_x1lw3")
-animation = &"angry"
-autoplay = "idle"
 centered = false
 
 [node name="Banners" type="Node2D" parent="."]
@@ -255,6 +246,15 @@ sprite_frames = SubResource("SpriteFrames_nrw76")
 position = Vector2(33, 93)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nrw76")
+
+[node name="Kingbackground" type="Node2D" parent="."]
+
+[node name="King" type="AnimatedSprite2D" parent="Kingbackground"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_x1lw3")
+animation = &"angry"
+autoplay = "idle"
+centered = false
 
 [node name="NextGameTimer" type="Timer" parent="."]
 wait_time = 3.0
